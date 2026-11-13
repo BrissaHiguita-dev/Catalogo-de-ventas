@@ -1,0 +1,221 @@
+:root {
+    --rosa-pastel: #ffd1dc;
+    --rosa-hover: #fca1b7;
+    --lila-pastel: #e6e6fa;
+    --vainilla-soft: #fffdf5;
+    --blanco: #ffffff;
+    --negro-elegante: #212529;
+    --negro-suave: #4a4a4a;
+    --border-pink: #f8d7da;
+    --card-radius: 20px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: var(--vainilla-soft) !important;
+    color: var(--negro-suave) !important;
+}
+
+h1, h2, h3, .font-title {
+    font-family: 'Playfair Display', serif !important;
+}
+
+/* Barra Anuncio Top */
+.announcement-bar {
+    background-color: var(--negro-elegante);
+    color: #fffdd0;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* Navbar Boutique */
+.navbar-boutique {
+    background-color: var(--blanco) !important;
+    border-bottom: 2px solid var(--rosa-pastel);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    padding: 12px 0;
+}
+
+.brand-name {
+    color: var(--negro-elegante);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.brand-subtext {
+    font-size: 0.72rem;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.brand-logo-icon {
+    font-size: 1.4rem;
+    background-color: var(--rosa-pastel);
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Botón Carrito */
+.btn-cart-boutique {
+    background-color: var(--rosa-pastel) !important;
+    color: var(--negro-elegante) !important;
+    font-weight: 600;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+.btn-cart-boutique:hover {
+    background-color: var(--rosa-hover) !important;
+}
+
+/* Hero Banner Lujo */
+.hero-boutique {
+    background: linear-gradient(135deg, #ffffff 0%, #fffdd0 50%, var(--rosa-pastel) 100%);
+    border-radius: 28px;
+    border: 1px solid var(--rosa-pastel);
+    box-shadow: 0 10px 30px rgba(255, 209, 220, 0.25);
+}
+
+.badge-lila {
+    background-color: var(--lila-pastel) !important;
+    color: var(--negro-elegante) !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.badge-trust {
+    background-color: var(--blanco);
+    border: 1px solid var(--rosa-pastel);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--negro-elegante);
+}
+
+/* Categorías Nav Pills */
+.nav-pills-boutique .nav-link {
+    border-radius: 50px !important;
+    color: var(--negro-elegante) !important;
+    background: var(--blanco) !important;
+    font-weight: 500;
+    padding: 10px 24px !important;
+    border: 1px solid var(--rosa-pastel) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-pills-boutique .nav-link.active, 
+.nav-pills-boutique .nav-link:hover {
+    background-color: var(--negro-elegante) !important;
+    color: #fffdd0 !important;
+    border-color: var(--negro-elegante) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tarjetas de Producto Boutique */
+.card-boutique {
+    border: 1px solid rgba(255, 209, 220, 0.8) !important;
+    border-radius: var(--card-radius) !important;
+    background: var(--blanco) !important;
+    transition: all 0.35s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-boutique:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(230, 230, 250, 0.6) !important;
+    border-color: var(--lila-pastel) !important;
+}
+
+.product-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 220px;
+    background-color: var(--blanco);
+}
+
+.product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+.card-boutique:hover .product-img-wrapper img {
+    transform: scale(1.06);
+}
+
+/* Botones de Acción */
+.btn-boutique-action {
+    background-color: var(--lila-pastel) !important;
+    color: var(--negro-elegante) !important;
+    border-radius: 50px !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+.btn-boutique-action:hover {
+    background-color: var(--negro-elegante) !important;
+    color: #fffdd0 !important;
+}
+
+.btn-boutique-primary {
+    background-color: var(--negro-elegante) !important;
+    color: #fffdd0 !important;
+    border-radius: 50px !important;
+    font-weight: 600;
+    border: none !important;
+}
+
+.header-modal-pink {
+    background-color: var(--rosa-pastel) !important;
+}
+
+.flavor-option {
+    cursor: pointer;
+    border: 2px solid var(--border-pink);
+    border-radius: 14px;
+    padding: 12px 8px;
+    transition: all 0.25s ease;
+    text-align: center;
+    background-color: var(--blanco);
+    font-size: 0.88rem;
+}
+
+.flavor-option:hover, .flavor-option.selected {
+    border-color: var(--negro-elegante);
+    background-color: var(--lila-pastel);
+    color: var(--negro-elegante);
+    font-weight: 600;
+}
+
+.btn-whatsapp {
+    background-color: #25d366 !important;
+    color: var(--blanco) !important;
+    border-radius: 50px !important;
+    font-weight: 700;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+}
+
+/* Estilo para la imagen del logo en el Navbar */
+.brand-logo-img {
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 50%; /* Si tu logo es circular. Cámbialo a 8px si prefieres bordes cuadrados suaves */
+    border: 2px solid var(--rosa-pastel);
+}

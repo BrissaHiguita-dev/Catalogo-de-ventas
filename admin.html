@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Administrador ✨ | El Mundo de los Detalles</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-vanilla-soft">
+
+    <!-- SCRIPT DE SEGURIDAD PARA ADMIN -->
+    <script>
+        if (sessionStorage.getItem('adminAutenticado') !== 'true') {
+            alert("⚠️ Acceso no autorizado. Debes ingresar tu contraseña desde la tienda.");
+            window.location.href = 'index.html';
+        }
+    </script>
+
+    <!-- NAVBAR ADMIN -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-boutique">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="admin.html">
+                <img src="images/logo.png" alt="Logo El Mundo de los Detalles" class="brand-logo-img me-2">
+                <div class="d-flex flex-column">
+                    <span class="font-title brand-name">Panel Administrativo</span>
+                    <span class="brand-subtext">El Mundo de los Detalles</span>
+                </div>
+            </a>
+            
+            <div class="d-flex align-items-center gap-2">
+                <a href="index.html" target="_blank" class="btn btn-boutique-primary rounded-pill px-3 py-2 text-decoration-none small">
+                    <i class="bi bi-shop me-1"></i> Ver Tienda Pública
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL ADMIN -->
+    <main class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+            <div>
+                <h2 class="font-title fw-bold text-dark mb-1">Centro de Control & Gestión</h2>
+                <p class="text-muted m-0">Administra tus productos y catálogo para mantener tu negocio al día en Manizales.</p>
+            </div>
+        </div>
+
+        <!-- Pestañas de Navegación Admin -->
+        <ul class="nav nav-tabs mb-4" id="adminTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-bold text-dark" id="tab-productos" data-bs-toggle="tab" data-bs-target="#pane-productos" type="button">🎁 Gestionar Catálogo</button>
+            </li>
+        </ul>
+
+        <!-- Contenido de Pestañas -->
+        <div class="tab-content" id="adminTabContent">
+            <div class="tab-pane fade show active" id="pane-productos">
+                <div class="row g-4">
+                    <div class="col-12 col-lg-4">
+                        <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+                            <h5 class="font-title fw-bold mb-3">➕ Añadir Nuevo Producto</h5>
+                            <form id="formNuevoProducto" onsubmit="guardarNuevoProducto(event)">
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Nombre del Producto</label>
+                                    <input type="text" class="form-control rounded-3" id="nuevoNombre" required placeholder="Ej. Caja Especial">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Categoría</label>
+                                    <select class="form-select rounded-3" id="nuevaCategoria">
+                                        <option value="MINI_DONAS">Mini Donas</option>
+                                        <option value="MINI_DONAS_TEMATICAS">Mini Donas Temáticas</option>
+                                        <option value="DESAYUNOS">Desayunos</option>
+                                        <option value="CARTELERAS">Bandejas & Regalos</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Precio Base ($ COP)</label>
+                                    <input type="number" class="form-control rounded-3" id="nuevoPrecio" required placeholder="Ej. 25000">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Ruta o Enlace de Imagen</label>
+                                    <input type="text" class="form-control rounded-3" id="nuevaImagen" required placeholder="images/foto.png">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label small fw-bold">Descripción</label>
+                                    <textarea class="form-control rounded-3" id="nuevaDesc" rows="2" placeholder="Detalle lo que incluye..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-boutique-primary w-100 py-2">Guardar Producto</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <div class="card border-0 shadow-sm p-4 rounded-4 bg-white">
+                            <h5 class="font-title fw-bold mb-3">📋 Listado Actual en Tienda</h5>
+                            <div id="tabla-admin-productos" class="table-responsive">
+                                <!-- Se llena por JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="productos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
